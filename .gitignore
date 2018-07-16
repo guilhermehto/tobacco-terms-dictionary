@@ -17,6 +17,7 @@ npm-debug.log*
 .sass-cache/
 .tmp/
 .versions/
+src/credentials.ts
 coverage/
 dist/
 node_modules/
