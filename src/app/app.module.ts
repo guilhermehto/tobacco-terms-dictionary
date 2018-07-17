@@ -7,15 +7,15 @@ import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "../credentials";
 
 import {MyApp} from './app.component';
-import {HomePage} from '../pages/home/home';
-import {ListPage} from '../pages/list/list';
+import {TermsPage} from '../pages/terms/terms';
+import {CategoriesPage} from '../pages/categories/categories';
 
 
 @NgModule({
     declarations: [
         MyApp,
-        HomePage,
-        ListPage
+        TermsPage,
+        CategoriesPage
     ],
     imports: [
         BrowserModule,
@@ -26,8 +26,8 @@ import {ListPage} from '../pages/list/list';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
-        HomePage,
-        ListPage
+        TermsPage,
+        CategoriesPage
     ],
     providers: [
         {provide: ErrorHandler, useClass: IonicErrorHandler}
