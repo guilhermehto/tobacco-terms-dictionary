@@ -14,6 +14,7 @@ import {CategoriesPage} from '../pages/categories/categories';
 /* Providers */
 import {TermsProvider} from '../providers/terms/terms';
 import {CategoriesProvider} from '../providers/categories/categories';
+import {AlertCtrlProvider} from '../providers/alert-ctrl/alert-ctrl';
 
 
 @NgModule({
@@ -36,8 +37,10 @@ import {CategoriesProvider} from '../providers/categories/categories';
     ],
     providers: [
         {provide: ErrorHandler, useClass: IonicErrorHandler},
+        AlertCtrlProvider,
         TermsProvider,
-        CategoriesProvider
+        CategoriesProvider,
+        AlertCtrlProvider
     ]
 })
 export class AppModule {
