@@ -8,11 +8,38 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-        <ion-item *ngFor="let term of terms | async">
-            {{term.term}}
-        </ion-item>
-    </ion-list>
 
-    <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12>
+                <ion-searchbar
+                    [animated]="true"
+                    [(ngModel)]="search"
+                    (ionInput)="onSearchInput($event)"
+                    placeholder="Pesquisar por termo">
+                </ion-searchbar>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                <ion-item>Termo</ion-item>
+            </ion-col>
+            <ion-col col-6>
+                <ion-item>Tradução</ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let term of terms | async">
+            <ion-col col-6>
+                <ion-card>
+                    <ion-item>{{ term.term }}</ion-item>
+                </ion-card>
+            </ion-col>
+            <ion-col col-6>
+                <ion-card>
+                    <ion-item>{{ term.translate }}</ion-item>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>

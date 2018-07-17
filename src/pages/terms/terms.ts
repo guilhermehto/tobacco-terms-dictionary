@@ -11,8 +11,14 @@ import {Term} from "../../interfaces/term";
 export class TermsPage {
 
     terms: Observable<Term[]>;
+    search: string;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private termsProvider: TermsProvider) {
+    }
+
+    onSearchInput(e) {
+        console.log('model: ', this.search);
+        console.log('onSearch: ', e);
     }
 
     ionViewDidLoad() {
